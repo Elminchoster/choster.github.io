@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <style>
+    .carousel-inner{
+      width: 100%;
+      max-height: 400px !important;
+      padding: 5px;;
+    }
+    </style>
+    
+</head>
+<body>
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/gambar1.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="img/gambar2.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="img/gambar3.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: rgb(16, 20, 16);">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Desa wisata</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="index.html">Beranda</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="#">Objek Wisata</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active " aria-current="page" href="akomodasi.html">Akomodasi</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    
+        <div class="row mt-2 shadow-lg ">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                 <div class="col-sm-3">
+                     <label for="Kategori" class="form-label">Kategori</label>
+                    <select class="form-select"id="Kategori">
+                        <option selected>Pilih kategori</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Kendaraan">Kendaraan</option>
+                        <option value="Other">Other</option>
+                      </select>
+                 </div>
+                 <div class="col-sm-3">
+                    <label for="Chekin" class="form-label">Tanggal Chek-in</label>
+                    <input type="date" id="Chekin" class="form-control" id="Tgl">
+                 </div>
+                 <div class="col-sm-3">
+                    <label for="Chekout" class="form-label">Tanggal Chek-out</label>
+                    <input type="date" id="Chekout" class="form-control" id="Tgl">
+                 </div>
+                 <div class="col-sm-3">
+                  <a id="cari" type="button" class="btn btn-primary" style="margin-top: 30px;">lihat</a>
+      
+                </div>
+
+                 </div>
+            </div>
+           </div>
+        </div>
+    <div class="row" id="halamanHotel" style="display:none;" >
+    <div class="sm-12">
+     INI HALAMAN HOTEL
+   </div>
+   </div>
+
+   <div class="row" id="halamanKendaraan" style="display:none;" >
+    <div class="sm-12">
+     INI HALAMAN KENDARAAN
+   </div>
+   </div>
+
+   <div class="row" id="halamanOther" style="display:none;" >
+    <div class="sm-12">
+     INI HALAMAN OTHER
+   </div>
+   </div>
+
+  
+   
+   <script src="bootstrap/js/bootstrap.bundle.min.js"> </script>
+    <script src="bootstrap/jquery-3.6.3.min.js"> </script>
+    <script>
+       $("#cari").click(function () {
+         var kategori = $("#kategoti").val();
+         if(kategori=="Hotel"){
+            $("#halamanHotel").fadeIn("slow");
+            $("#halamanKendaran").fadeOut();
+            $("#halamanOther").fadeOut();
+        }else if(kategori=="Kendaraan"){
+            $("#halamanHotel").fadeIn("slow");
+            $("#halamanKendaran").fadeOut();
+            $("#halamanOther").fadeOut();
+        }else {
+            $("#halamanHotel").fadeIn("slow");
+            $("#halamanKendaran").fadeOut();
+            $("#halamanOther").fadeOut();
+        }
+         });
+    </script>
+
+       
+</body>
+</html>
